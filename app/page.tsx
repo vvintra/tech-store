@@ -33,21 +33,21 @@ const testimonials = [
     rating: 5,
     text: "Compré mi iPhone 15 Pro en AudioPhones y el servicio fue excepcional. La entrega fue rápida y el producto llegó en perfectas condiciones. Definitivamente volveré a comprar.",
     product: "iPhone 15 Pro",
-    image: "/placeholder.svg?height=60&width=60",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face",
   },
   {
     name: "Ana García",
     rating: 5,
     text: "Excelente atención al cliente y precios competitivos. Mi Samsung Galaxy funciona perfectamente y el proceso de compra fue muy sencillo. Los recomiendo 100%.",
     product: "Samsung Galaxy S24",
-    image: "/placeholder.svg?height=60&width=60",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face",
   },
   {
     name: "Miguel Torres",
     rating: 5,
     text: "La mejor tienda de celulares online. Productos originales, garantía completa y soporte técnico de primera. Muy recomendado para todos.",
     product: "Xiaomi Redmi Note 13",
-    image: "/placeholder.svg?height=60&width=60",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face",
   },
 ]
 
@@ -199,7 +199,7 @@ export default function AudioPhonesStore() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-3xl transform rotate-3 opacity-10"></div>
               <Image
-                src="/modern-smartphones-display.png"
+                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=500&fit=crop"
                 alt="AudioPhones - Celulares Premium"
                 width={600}
                 height={500}
@@ -600,3 +600,4 @@ export default function AudioPhonesStore() {
     </div>
   )
 }
+// This code is a React component for the AudioPhones store homepage.
