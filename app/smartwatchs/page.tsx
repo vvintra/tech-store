@@ -1,32 +1,39 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Star, Grid, List, ArrowLeft, Filter } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import { Star, Grid, List, ArrowLeft, Filter } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useCartStore } from "@/lib/cart-store"
-import { useProductStore } from "@/lib/product-store"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useCartStore } from "@/lib/cart-store";
+import { useProductStore } from "@/lib/product-store";
 
 export default function SmartwatchsPage() {
-  const [sortBy, setSortBy] = useState("featured")
-  const [filterBy, setFilterBy] = useState("all")
-  const [viewMode, setViewMode] = useState("grid")
+  const [sortBy, setSortBy] = useState("featured");
+  const [filterBy, setFilterBy] = useState("all");
+  const [viewMode, setViewMode] = useState("grid");
 
-  const { addItem, toggleCart } = useCartStore()
-  const { getProductsByCategory, initializeProducts, initialized } = useProductStore()
+  const { addItem, toggleCart } = useCartStore();
+  const { getProductsByCategory, initializeProducts, initialized } =
+    useProductStore();
 
   useEffect(() => {
     if (!initialized) {
-      initializeProducts()
+      initializeProducts();
     }
-  }, [initialized, initializeProducts])
+  }, [initialized, initializeProducts]);
 
-  const allSmartwatchs = getProductsByCategory("smartwatchs")
+  const allSmartwatchs = getProductsByCategory("smartwatchs");
 
   const handleAddToCart = (product: any) => {
     if (product.stock > 0) {
@@ -38,35 +45,37 @@ export default function SmartwatchsPage() {
         category: product.category,
         storage: product.storage,
         color: product.color,
-      })
-      setTimeout(() => toggleCart(), 100)
+      });
+      setTimeout(() => toggleCart(), 100);
     }
-  }
+  };
 
   const filteredProducts = allSmartwatchs.filter((product) => {
-    if (filterBy === "all") return true
-    if (filterBy === "new") return product.condition === "Nuevo"
-    if (filterBy === "used") return product.condition === "Usado"
-    if (filterBy === "sale") return product.badge === "Sale"
-    return true
-  })
+    if (filterBy === "all") return true;
+    if (filterBy === "new") return product.condition === "Nuevo";
+    if (filterBy === "used") return product.condition === "Usado";
+    if (filterBy === "sale") return product.badge === "Sale";
+    return true;
+  });
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     switch (sortBy) {
       case "price-low":
-        return a.price - b.price
+        return a.price - b.price;
       case "price-high":
-        return b.price - a.price
+        return b.price - a.price;
       case "rating":
-        return b.rating - a.rating
+        return b.rating - a.rating;
       case "newest":
-        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        return (
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
       case "name":
-        return a.name.localeCompare(b.name)
+        return a.name.localeCompare(b.name);
       default:
-        return b.featured ? 1 : -1
+        return b.featured ? 1 : -1;
     }
-  })
+  });
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -75,14 +84,20 @@ export default function SmartwatchsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link href="/" className="flex items-center text-gray-600 hover:text-orange-600 transition-colors">
+              <Link
+                href="/"
+                className="flex items-center text-gray-600 hover:text-orange-600 transition-colors"
+              >
                 <ArrowLeft className="h-5 w-5 mr-2" />
                 Volver al inicio
               </Link>
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">Smartwatchs</h1>
+                <h1 className="text-3xl font-bold text-gray-900">
+                  Smartwatchs
+                </h1>
                 <p className="text-gray-600 mt-1">
-                  Descubre la mejor selección de Smartwatchs ({allSmartwatchs.length} productos disponibles)
+                  Descubre la mejor selección de Smartwatchs (
+                  {allSmartwatchs.length} productos disponibles)
                 </p>
               </div>
             </div>
@@ -96,7 +111,9 @@ export default function SmartwatchsPage() {
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center space-x-2">
               <Filter className="h-5 w-5 text-gray-500" />
-              <span className="text-sm font-medium text-gray-700">Filtros:</span>
+              <span className="text-sm font-medium text-gray-700">
+                Filtros:
+              </span>
             </div>
 
             <Select value={filterBy} onValueChange={setFilterBy}>
@@ -150,9 +167,16 @@ export default function SmartwatchsPage() {
         {sortedProducts.length === 0 ? (
           <div className="text-center py-16">
             <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Image src="/placeholder.svg?height=48&width=48" alt="No products" width={48} height={48} />
+              <Image
+                src="/placeholder.svg?height=48&width=48"
+                alt="No products"
+                width={48}
+                height={48}
+              />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No hay productos disponibles</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              No hay productos disponibles
+            </h3>
             <p className="text-gray-600 mb-6">
               {filterBy !== "all" || sortBy !== "featured"
                 ? "Intenta ajustar los filtros de búsqueda"
@@ -165,9 +189,18 @@ export default function SmartwatchsPage() {
             </Link>
           </div>
         ) : (
-          <div className={`grid gap-6 ${viewMode === "grid" ? "md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}>
+          <div
+            className={`grid gap-6 ${
+              viewMode === "grid"
+                ? "md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                : "grid-cols-1"
+            }`}
+          >
             {sortedProducts.map((product) => (
-              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 bg-white">
+              <Card
+                key={product.id}
+                className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 bg-white"
+              >
                 <div className="relative">
                   <Image
                     src={product.image || "/placeholder.svg"}
@@ -184,10 +217,10 @@ export default function SmartwatchsPage() {
                         product.badge === "Sale"
                           ? "bg-red-500 hover:bg-red-500"
                           : product.badge === "New"
-                            ? "bg-green-500 hover:bg-green-500"
-                            : product.badge === "Bestseller"
-                              ? "bg-orange-500 hover:bg-orange-500"
-                              : "bg-blue-500 hover:bg-blue-500"
+                          ? "bg-green-500 hover:bg-green-500"
+                          : product.badge === "Bestseller"
+                          ? "bg-orange-500 hover:bg-orange-500"
+                          : "bg-blue-500 hover:bg-blue-500"
                       } text-white shadow-lg`}
                     >
                       {product.badge}
@@ -208,17 +241,27 @@ export default function SmartwatchsPage() {
                   )}
                 </div>
                 <CardContent className="p-6">
-                  <div className={`${viewMode === "list" ? "flex justify-between items-start" : ""}`}>
+                  <div
+                    className={`${
+                      viewMode === "list"
+                        ? "flex justify-between items-start"
+                        : ""
+                    }`}
+                  >
                     <div className={`${viewMode === "list" ? "flex-1" : ""}`}>
                       <h3 className="font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
                         {product.name}
                       </h3>
                       {product.description && (
-                        <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
+                        <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                          {product.description}
+                        </p>
                       )}
                       <div className="flex items-center text-sm text-gray-500 mb-3">
                         {product.storage && <span>{product.storage}</span>}
-                        {product.storage && product.color && <span className="mx-2">•</span>}
+                        {product.storage && product.color && (
+                          <span className="mx-2">•</span>
+                        )}
                         {product.color && <span>{product.color}</span>}
                       </div>
 
@@ -228,20 +271,46 @@ export default function SmartwatchsPage() {
                             <Star
                               key={i}
                               className={`h-4 w-4 ${
-                                i < Math.floor(product.rating) ? "text-yellow-400 fill-current" : "text-gray-300"
+                                i < Math.floor(product.rating)
+                                  ? "text-yellow-400 fill-current"
+                                  : "text-gray-300"
                               }`}
                             />
                           ))}
                         </div>
-                        <span className="text-sm text-gray-500 ml-2">({product.reviews})</span>
+                        <span className="text-sm text-gray-500 ml-2">
+                          ({product.reviews})
+                        </span>
                       </div>
 
                       <div className="space-y-2">
                         <div className="flex items-baseline space-x-2">
-                          <span className="text-2xl font-bold text-gray-900">${product.price.toLocaleString()}</span>
+                          <span className="text-2xl font-bold text-gray-900">
+                            ${product.price.toLocaleString()}
+                          </span>
                           {product.originalPrice && (
                             <span className="text-sm text-gray-500 line-through">
                               ${product.originalPrice.toLocaleString()}
                             </span>
                           )}
-                        \
+                        </div>
+                        <Button
+                          onClick={() => handleAddToCart(product)}
+                          className="w-full bg-orange-600 hover:bg-orange-700 text-white rounded-full"
+                        >
+                          Agregar al carrito
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+// This code is a React component for displaying a page of smartwatch products.
+// It includes filtering, sorting, and viewing options, as well as a cart functionality.
