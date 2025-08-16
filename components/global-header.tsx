@@ -64,7 +64,7 @@ export function GlobalHeader() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
-                <Image src="/logo-white.png" alt="AudioPhones Logo" width={44} height={44} className="text-white" />
+                <Image src="https://audiophones.com.ar/src/img/logo-ap-white.png" alt="AudioPhones Logo" width={44} height={44} className="text-white" />
               </div>
               <div className="text-2xl font-bold">
                 <span className="text-gray-900">AUDIO</span>
