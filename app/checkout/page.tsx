@@ -303,7 +303,7 @@ export default function CheckoutPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-orange-600 hover:bg-orange-700 text-lg py-3"
+                  className="w-full bg-red-600 hover:bg-red-700 text-lg py-3"
                   disabled={isProcessing || items.length === 0}
                   onClick={handleSubmit}
                 >
@@ -419,7 +419,7 @@ function OrderCompletedPage({ formData, total, items, onComplete }: any) {
 
           <div className="text-center">
             <Link href="/">
-              <Button className="bg-orange-600 hover:bg-orange-700">Continuar Comprando</Button>
+              <Button className="bg-red-600 hover:bg-red-700">Continuar Comprando</Button>
             </Link>
           </div>
         </CardContent>

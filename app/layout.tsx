@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "Descubre la mejor selección de iPhones, Samsung, Xiaomi y más.",
     creator: "@audio.phones",
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

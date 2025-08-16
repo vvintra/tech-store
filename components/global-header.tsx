@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Search, ShoppingCart, Menu, X, Phone, Instagram, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -32,7 +33,7 @@ export function GlobalHeader() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-lg">
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white py-2">
+      <div className="bg-gradient-to-r from-red-600 to-red-500 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-6">
@@ -62,29 +63,29 @@ export function GlobalHeader() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">A</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Image src="/logo-white.png" alt="AudioPhones Logo" width={44} height={44} className="text-white" />
               </div>
               <div className="text-2xl font-bold">
                 <span className="text-gray-900">AUDIO</span>
-                <span className="text-orange-500">PHONES</span>
+                <span className="text-red-500">PHONES</span>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">
+              <Link href="/" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
                 Inicio
               </Link>
               <div className="relative group">
-                <button className="text-gray-700 hover:text-orange-600 font-medium transition-colors">Productos</button>
+                <button className="text-gray-700 hover:text-red-600 font-medium transition-colors">Productos</button>
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="p-4 grid grid-cols-2 gap-2">
                     {categories.map((category) => (
                       <Link
                         key={category.name}
                         href={category.href}
-                        className="block px-3 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                        className="block px-3 py-2 text-sm text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                       >
                         {category.name}
                       </Link>
@@ -92,10 +93,10 @@ export function GlobalHeader() {
                   </div>
                 </div>
               </div>
-              <Link href="/ofertas" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">
+              <Link href="/ofertas" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
                 Ofertas
               </Link>
-              <Link href="/contacto" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">
+              <Link href="/contacto" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
                 Contacto
               </Link>
             </nav>
@@ -109,7 +110,7 @@ export function GlobalHeader() {
                   <Input
                     type="search"
                     placeholder="Buscar productos..."
-                    className="pl-10 pr-4 py-2 w-64 border-gray-200 rounded-full focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="pl-10 pr-4 py-2 w-64 border-gray-200 rounded-full focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -119,11 +120,11 @@ export function GlobalHeader() {
                 variant="outline"
                 size="sm"
                 onClick={toggleCart}
-                className="relative border-gray-200 hover:border-orange-500 hover:text-orange-600 rounded-full px-4 py-2 bg-transparent"
+                className="relative border-gray-200 hover:border-red-500 hover:text-red-600 rounded-full px-4 py-2 bg-transparent"
               >
                 <ShoppingCart className="h-5 w-5" />
                 {totalItems > 0 && (
-                  <Badge className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full min-w-[20px] h-5 flex items-center justify-center">
+                  <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full min-w-[20px] h-5 flex items-center justify-center">
                     {totalItems}
                   </Badge>
                 )}
@@ -156,7 +157,7 @@ export function GlobalHeader() {
             <nav className="space-y-2">
               <Link
                 href="/"
-                className="block px-4 py-3 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                className="block px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Inicio
@@ -168,7 +169,7 @@ export function GlobalHeader() {
                     <Link
                       key={category.name}
                       href={category.href}
-                      className="block px-3 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                      className="block px-3 py-2 text-sm text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {category.name}
@@ -178,14 +179,14 @@ export function GlobalHeader() {
               </div>
               <Link
                 href="/ofertas"
-                className="block px-4 py-3 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                className="block px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Ofertas
               </Link>
               <Link
                 href="/contacto"
-                className="block px-4 py-3 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                className="block px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contacto

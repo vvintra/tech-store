@@ -75,7 +75,7 @@ export default function XiaomiPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link href="/" className="flex items-center text-gray-600 hover:text-orange-600 transition-colors">
+              <Link href="/" className="flex items-center text-gray-600 hover:text-red-600 transition-colors">
                 <ArrowLeft className="h-5 w-5 mr-2" />
                 Volver al inicio
               </Link>
@@ -159,7 +159,7 @@ export default function XiaomiPage() {
                 : "Agrega productos desde el panel de administración"}
             </p>
             <Link href="/admin/login">
-              <Button className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-6 py-3 rounded-full">
+              <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-full">
                 Ir al Panel de Admin
               </Button>
             </Link>
@@ -191,7 +191,7 @@ export default function XiaomiPage() {
                           : phone.badge === "New"
                             ? "bg-green-500 hover:bg-green-500"
                             : phone.badge === "Bestseller"
-                              ? "bg-orange-500 hover:bg-orange-500"
+                              ? "bg-red-600 hover:bg-red-600"
                               : "bg-blue-500 hover:bg-blue-500"
                       } text-white shadow-lg`}
                     >
@@ -215,7 +215,7 @@ export default function XiaomiPage() {
                 <CardContent className="p-6">
                   <div className={`${viewMode === "list" ? "flex justify-between items-start" : ""}`}>
                     <div className={`${viewMode === "list" ? "flex-1" : ""}`}>
-                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                         {phone.name}
                       </h3>
                       {phone.description && (
@@ -256,7 +256,7 @@ export default function XiaomiPage() {
 
                     <div className={`${viewMode === "list" ? "ml-6" : "mt-4"}`}>
                       <Button
-                        className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                         onClick={() => handleAddToCart(phone)}
                         disabled={phone.stock === 0}
                       >

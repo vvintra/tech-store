@@ -1,10 +1,10 @@
 "use client"
 
 import type React from "react"
-
+import Image from "next/image"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Eye, EyeOff, Lock, User, Shield } from "lucide-react"
+import { Eye, EyeOff, Lock, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -34,7 +34,7 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50 flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-40">
         <div
@@ -50,15 +50,15 @@ export default function AdminLogin() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
-              <Shield className="h-8 w-8 text-white" />
+            <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <Image src="/logo-white.png" alt="AudioPhones Logo" width={32} height={32} />
             </div>
             <div className="text-3xl font-bold">
               <span className="text-gray-900">AUDIO</span>
-              <span className="text-orange-500">PHONES</span>
+              <span className="text-red-500">PHONES</span>
             </div>
           </div>
-          <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-100 px-4 py-2 text-sm font-medium mb-4">
+          <Badge className="bg-red-100 text-red-800 hover:bg-red-100 px-4 py-2 text-sm font-medium mb-4">
             🔐 Panel de Administración
           </Badge>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Acceso Administrativo</h1>
@@ -87,7 +87,7 @@ export default function AdminLogin() {
                     placeholder="Ingresa tu usuario"
                     value={credentials.username}
                     onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
-                    className="pl-10 h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="pl-10 h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -105,7 +105,7 @@ export default function AdminLogin() {
                     placeholder="Ingresa tu contraseña"
                     value={credentials.password}
                     onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                    className="pl-10 pr-10 h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="pl-10 pr-10 h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     required
                   />
                   <button
@@ -121,7 +121,7 @@ export default function AdminLogin() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-12 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full h-12 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 {isLoading ? (
                   <div className="flex items-center space-x-2">

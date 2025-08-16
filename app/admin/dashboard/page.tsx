@@ -258,13 +258,13 @@ export default function AdminDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">A</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Image src="/logo-white.png" alt="AudioPhones Logo" width={24} height={24} />
               </div>
               <div>
                 <h1 className="text-2xl font-bold">
                   <span className="text-gray-900">AUDIO</span>
-                  <span className="text-orange-500">PHONES</span>
+                  <span className="text-red-500">PHONES</span>
                 </h1>
                 <p className="text-sm text-gray-600">Panel de Administración</p>
               </div>
@@ -275,7 +275,7 @@ export default function AdminDashboard() {
                 onClick={handleRefresh}
                 disabled={isRefreshing}
                 variant="outline"
-                className="border-gray-200 hover:border-orange-500 hover:text-orange-600 transition-colors bg-transparent"
+                className="border-gray-200 hover:border-red-500 hover:text-red-600 transition-colors bg-transparent"
               >
                 <RefreshCw className={`h-4 w-4 mr-2 ${isRefreshing ? "animate-spin" : ""}`} />
                 {isRefreshing ? "Actualizando..." : "Actualizar Stock"}
@@ -363,7 +363,7 @@ export default function AdminDashboard() {
                 <DialogTrigger asChild>
                   <Button
                     onClick={resetForm}
-                    className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <Plus className="h-5 w-5 mr-2" />
                     Nuevo Producto
@@ -390,7 +390,7 @@ export default function AdminDashboard() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="iPhone 15 Pro Max"
-                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                           required
                         />
                       </div>
@@ -403,7 +403,7 @@ export default function AdminDashboard() {
                           id="category"
                           value={formData.category}
                           onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                          className="w-full h-12 border border-gray-200 rounded-xl px-3 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="w-full h-12 border border-gray-200 rounded-xl px-3 focus:ring-2 focus:ring-red-500 focus:border-transparent"
                           required
                         >
                           <option value="">Seleccionar categoría</option>
@@ -427,7 +427,7 @@ export default function AdminDashboard() {
                           value={formData.price}
                           onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                           placeholder="299999"
-                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                           required
                         />
                       </div>
@@ -442,7 +442,7 @@ export default function AdminDashboard() {
                           value={formData.originalPrice}
                           onChange={(e) => setFormData({ ...formData, originalPrice: e.target.value })}
                           placeholder="349999"
-                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                         />
                       </div>
                     </div>
@@ -456,7 +456,7 @@ export default function AdminDashboard() {
                         value={formData.description}
                         onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                         placeholder="Descripción detallada del producto..."
-                        className="min-h-[100px] border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        className="min-h-[100px] border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                         rows={4}
                       />
                     </div>
@@ -472,7 +472,7 @@ export default function AdminDashboard() {
                           value={formData.stock}
                           onChange={(e) => setFormData({ ...formData, stock: e.target.value })}
                           placeholder="10"
-                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                           required
                         />
                       </div>
@@ -489,7 +489,7 @@ export default function AdminDashboard() {
                           max="5"
                           value={formData.rating}
                           onChange={(e) => setFormData({ ...formData, rating: e.target.value })}
-                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                         />
                       </div>
 
@@ -503,7 +503,7 @@ export default function AdminDashboard() {
                           value={formData.reviews}
                           onChange={(e) => setFormData({ ...formData, reviews: e.target.value })}
                           placeholder="0"
-                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="h-12 border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                         />
                       </div>
                     </div>
@@ -517,7 +517,7 @@ export default function AdminDashboard() {
                           id="badge"
                           value={formData.badge}
                           onChange={(e) => setFormData({ ...formData, badge: e.target.value })}
-                          className="w-full h-12 border border-gray-200 rounded-xl px-3 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="w-full h-12 border border-gray-200 rounded-xl px-3 focus:ring-2 focus:ring-red-500 focus:border-transparent"
                         >
                           <option value="">Sin badge</option>
                           {badges.map((badge) => (
@@ -546,7 +546,7 @@ export default function AdminDashboard() {
                     {/* Image Upload */}
                     <div className="space-y-4">
                       <Label className="text-sm font-medium text-gray-700">Imágenes del Producto</Label>
-                      <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-orange-500 transition-colors">
+                      <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-red-500 transition-colors">
                         <input
                           type="file"
                           multiple
@@ -588,7 +588,7 @@ export default function AdminDashboard() {
                                 <X className="h-4 w-4" />
                               </button>
                               {index === 0 && (
-                                <Badge className="absolute bottom-2 left-2 bg-orange-500 text-white text-xs">
+                                <Badge className="absolute bottom-2 left-2 bg-red-500 text-white text-xs">
                                   Principal
                                 </Badge>
                               )}
@@ -609,7 +609,7 @@ export default function AdminDashboard() {
                       </Button>
                       <Button
                         type="submit"
-                        className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                       >
                         <Save className="h-4 w-4 mr-2" />
                         {editingProduct ? "Actualizar" : "Crear"} Producto
@@ -631,7 +631,7 @@ export default function AdminDashboard() {
                     placeholder="Buscar productos..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 h-12 border-gray-200 rounded-full focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="pl-10 h-12 border-gray-200 rounded-full focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -640,7 +640,7 @@ export default function AdminDashboard() {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="h-12 border border-gray-200 rounded-full px-4 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="h-12 border border-gray-200 rounded-full px-4 focus:ring-2 focus:ring-red-500 focus:border-transparent"
                 >
                   <option value="all">Todas las categorías</option>
                   {categories.map((cat) => (
@@ -723,8 +723,8 @@ export default function AdminDashboard() {
                                     : product.badge === "New"
                                       ? "bg-green-100 text-green-800"
                                       : product.badge === "Bestseller"
-                                        ? "bg-orange-100 text-orange-800"
-                                        : "bg-blue-100 text-blue-800"
+                                        ? "bg-red-100 text-red-800"
+                                        : "bg-red-100 text-red-800"
                                 }`}
                               >
                                 {product.badge}
@@ -754,7 +754,7 @@ export default function AdminDashboard() {
                             product.stock === 0
                               ? "bg-red-100 text-red-800"
                               : product.stock <= 5
-                                ? "bg-yellow-100 text-yellow-800"
+                                ? "bg-red-100 text-red-800"
                                 : "bg-green-100 text-green-800"
                           }`}
                         >
@@ -770,9 +770,7 @@ export default function AdminDashboard() {
                       </TableCell>
                       <TableCell>
                         <div className="flex items-center space-x-2">
-                          {product.featured && (
-                            <Badge className="bg-purple-100 text-purple-800 text-xs">Destacado</Badge>
-                          )}
+                          {product.featured && <Badge className="bg-red-100 text-red-800 text-xs">Destacado</Badge>}
                           <Badge
                             className={`text-xs ${
                               product.stock > 0 ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
@@ -788,7 +786,7 @@ export default function AdminDashboard() {
                             variant="outline"
                             size="sm"
                             onClick={() => handleEdit(product)}
-                            className="border-gray-200 hover:border-orange-500 hover:text-orange-600 p-2"
+                            className="border-gray-200 hover:border-red-500 hover:text-red-600 p-2"
                           >
                             <Edit className="h-4 w-4" />
                           </Button>
@@ -823,7 +821,7 @@ export default function AdminDashboard() {
                       resetForm()
                       setIsDialogOpen(true)
                     }}
-                    className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-6 py-3 rounded-full font-semibold"
+                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-full font-semibold"
                   >
                     <Plus className="h-4 w-4 mr-2" />
                     Agregar Primer Producto

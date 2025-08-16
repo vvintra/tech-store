@@ -71,7 +71,7 @@ export default function AccesoriosPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link href="/" className="flex items-center text-gray-600 hover:text-gray-900">
+              <Link href="/" className="flex items-center text-gray-600 hover:text-red-600">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Volver al inicio
               </Link>
@@ -131,7 +131,7 @@ export default function AccesoriosPage() {
             <p className="text-gray-500 text-lg">No hay accesorios disponibles.</p>
             <p className="text-gray-400 mt-2">Agrega productos desde el panel de administración</p>
             <Link href="/admin/login">
-              <Button className="mt-4 bg-orange-600 hover:bg-orange-700">Ir al Panel de Admin</Button>
+              <Button className="mt-4 bg-red-600 hover:bg-red-700">Ir al Panel de Admin</Button>
             </Link>
           </div>
         ) : (
@@ -156,7 +156,7 @@ export default function AccesoriosPage() {
                           : product.badge === "New"
                             ? "bg-green-500"
                             : product.badge === "Bestseller"
-                              ? "bg-orange-500"
+                              ? "bg-red-500"
                               : "bg-blue-500"
                       }`}
                     >
@@ -186,7 +186,7 @@ export default function AccesoriosPage() {
                             <Star
                               key={i}
                               className={`h-4 w-4 ${
-                                i < Math.floor(product.rating) ? "text-yellow-400 fill-current" : "text-gray-300"
+                                i < Math.floor(product.rating) ? "text-red-600 fill-current" : "text-gray-300"
                               }`}
                             />
                           ))}
@@ -210,7 +210,7 @@ export default function AccesoriosPage() {
                     <div className={`${viewMode === "list" ? "ml-4" : "mt-4"}`}>
                       <Button
                         size="sm"
-                        className="bg-orange-600 hover:bg-orange-700 w-full"
+                        className="bg-red-600 hover:bg-red-700 w-full"
                         onClick={() => handleAddToCart(product)}
                         disabled={product.stock === 0}
                       >

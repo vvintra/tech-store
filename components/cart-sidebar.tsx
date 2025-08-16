@@ -26,9 +26,9 @@ export function CartSidebar() {
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
           <div className="flex items-center space-x-2">
-            <ShoppingBag className="h-6 w-6 text-orange-600" />
+            <ShoppingBag className="h-6 w-6 text-red-600" />
             <h2 className="text-xl font-bold text-gray-900">Carrito</h2>
-            {itemCount > 0 && <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-100">{itemCount}</Badge>}
+            {itemCount > 0 && <Badge className="bg-red-100 text-red-800 hover:bg-red-100">{itemCount}</Badge>}
           </div>
           <Button variant="ghost" size="sm" onClick={toggleCart} className="h-8 w-8 p-0">
             <X className="h-5 w-5" />
@@ -46,7 +46,7 @@ export function CartSidebar() {
               <p className="text-gray-600 mb-6">Agrega algunos productos para comenzar</p>
               <Button
                 onClick={toggleCart}
-                className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-6 py-3 rounded-full"
+                className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-full"
               >
                 Continuar Comprando
               </Button>
@@ -73,7 +73,7 @@ export function CartSidebar() {
                       </p>
                     )}
                     <div className="flex items-center justify-between mt-2">
-                      <span className="font-bold text-orange-600">${item.price.toLocaleString()}</span>
+                      <span className="font-bold text-red-600">${item.price.toLocaleString()}</span>
                       <div className="flex items-center space-x-2">
                         <Button
                           variant="outline"
@@ -114,12 +114,12 @@ export function CartSidebar() {
           <div className="border-t border-gray-100 p-6 space-y-4">
             <div className="flex justify-between items-center">
               <span className="text-lg font-semibold text-gray-900">Total:</span>
-              <span className="text-2xl font-bold text-orange-600">${total.toLocaleString()}</span>
+              <span className="text-2xl font-bold text-red-600">${total.toLocaleString()}</span>
             </div>
 
             <div className="space-y-3">
               <Link href="/checkout" onClick={toggleCart}>
-                <Button className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white py-3 rounded-full font-semibold shadow-lg">
+                <Button className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white py-3 rounded-full font-semibold shadow-lg">
                   Finalizar Compra
                 </Button>
               </Link>

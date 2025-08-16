@@ -131,7 +131,7 @@ export default function AudioPhonesStore() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-red-50 via-white to-red-50 py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-40">
           <div
             className="absolute inset-0"
@@ -145,12 +145,12 @@ export default function AudioPhonesStore() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-100 px-4 py-2 text-sm font-medium">
+                <Badge className="bg-red-100 text-red-800 hover:bg-red-100 px-4 py-2 text-sm font-medium">
                   ✨ Nuevos productos disponibles
                 </Badge>
                 <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
                   Los Mejores
-                  <span className="block bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
                     Celulares
                   </span>
                 </h1>
@@ -164,7 +164,7 @@ export default function AudioPhonesStore() {
                 <Link href="/iphones">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Ver Productos
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -173,14 +173,14 @@ export default function AudioPhonesStore() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-orange-200 text-orange-600 hover:bg-orange-50 bg-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="border-2 border-red-200 text-red-600 hover:bg-red-50 bg-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Celulares Usados
                 </Button>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-orange-100">
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-red-100">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-gray-900">500+</div>
                   <div className="text-sm text-gray-600">Clientes Felices</div>
@@ -197,7 +197,7 @@ export default function AudioPhonesStore() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-3xl transform rotate-3 opacity-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-600 rounded-3xl transform rotate-3 opacity-10"></div>
               <Image
                 src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=500&fit=crop"
                 alt="AudioPhones - Celulares Premium"
@@ -216,7 +216,7 @@ export default function AudioPhonesStore() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -242,15 +242,15 @@ export default function AudioPhonesStore() {
               const IconComponent = iconMap[category.icon as keyof typeof iconMap] || Smartphone
               return (
                 <Link key={category.id} href={getCategoryLink(category.id)}>
-                  <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group border-0 bg-gradient-to-br from-white to-gray-50 hover:from-orange-50 hover:to-orange-100">
+                  <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group border-0 bg-gradient-to-br from-white to-gray-50 hover:from-red-50 hover:to-red-100">
                     <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-orange-500 group-hover:to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-red-500 group-hover:to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
                         <IconComponent className="h-8 w-8 text-gray-600 group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                         {category.name}
                       </h3>
-                      <p className="text-sm text-gray-500 group-hover:text-orange-500 transition-colors">
+                      <p className="text-sm text-gray-500 group-hover:text-red-500 transition-colors">
                         {category.productCount} productos
                       </p>
                     </CardContent>
@@ -266,7 +266,7 @@ export default function AudioPhonesStore() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-100 px-4 py-2 text-sm font-medium mb-4">
+            <Badge className="bg-red-100 text-red-800 hover:bg-red-100 px-4 py-2 text-sm font-medium mb-4">
               ⭐ Lo más vendido
             </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Productos Destacados</h2>
@@ -282,7 +282,7 @@ export default function AudioPhonesStore() {
               </div>
               <p className="text-gray-500 text-xl mb-6">No hay productos destacados configurados.</p>
               <Link href="/admin/login">
-                <Button className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-8 py-3 rounded-full">
+                <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 rounded-full">
                   Configurar Productos Destacados
                 </Button>
               </Link>
@@ -312,7 +312,7 @@ export default function AudioPhonesStore() {
                             : product.badge === "New"
                               ? "bg-green-500 hover:bg-green-500"
                               : product.badge === "Bestseller"
-                                ? "bg-orange-500 hover:bg-orange-500"
+                                ? "bg-red-500 hover:bg-red-500"
                                 : "bg-blue-500 hover:bg-blue-500"
                         } text-white shadow-lg`}
                       >
@@ -339,8 +339,8 @@ export default function AudioPhonesStore() {
 
                   <CardContent className="p-6 space-y-4">
                     <div>
-                      <p className="text-sm text-orange-600 font-medium mb-1">{product.category}</p>
-                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                      <p className="text-sm text-red-600 font-medium mb-1">{product.category}</p>
+                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                         {product.name}
                       </h3>
                       {product.description && (
@@ -376,7 +376,7 @@ export default function AudioPhonesStore() {
                       </div>
 
                       <Button
-                        className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-500 text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                         onClick={() => handleAddToCart(product)}
                         disabled={product.stock === 0}
                       >
@@ -430,7 +430,7 @@ export default function AudioPhonesStore() {
                     />
                     <div>
                       <p className="font-bold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-orange-600">Compró: {testimonial.product}</p>
+                      <p className="text-sm text-red-600">Compró: {testimonial.product}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -441,7 +441,7 @@ export default function AudioPhonesStore() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-orange-500 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-red-600 to-red-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-40">
           <div
             className="absolute inset-0"
@@ -453,7 +453,7 @@ export default function AudioPhonesStore() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <h2 className="text-4xl font-bold text-white mb-4">Mantente al día con las últimas ofertas</h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
             Suscríbete y recibe ofertas exclusivas, noticias sobre nuevos productos y descuentos especiales
           </p>
           <div className="max-w-md mx-auto flex gap-4">
@@ -466,7 +466,7 @@ export default function AudioPhonesStore() {
               Suscribirse
             </Button>
           </div>
-          <p className="text-orange-100 text-sm mt-4">No spam. Solo las mejores ofertas y noticias de AudioPhones.</p>
+          <p className="text-red-100 text-sm mt-4">No spam. Solo las mejores ofertas y noticias de AudioPhones.</p>
         </div>
       </section>
 
@@ -476,12 +476,12 @@ export default function AudioPhonesStore() {
           <div className="grid md:grid-cols-5 gap-8 mb-12">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">A</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+                  <Image src="/logo-white.png" alt="AudioPhones Logo" width={24} height={24} />
                 </div>
                 <div className="text-2xl font-bold">
                   <span className="text-white">AUDIO</span>
-                  <span className="text-orange-500">PHONES</span>
+                  <span className="text-red-500">PHONES</span>
                 </div>
               </div>
               <p className="text-gray-300 mb-6 max-w-md">
@@ -490,14 +490,14 @@ export default function AudioPhonesStore() {
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <Phone className="h-5 w-5 text-orange-500" />
+                  <Phone className="h-5 w-5 text-red-500" />
                   <div>
                     <div className="font-medium">3412774303</div>
                     <div className="text-sm text-gray-400">1127208960</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <Instagram className="h-5 w-5 text-orange-500" />
+                  <Instagram className="h-5 w-5 text-red-500" />
                   <div>
                     <div className="font-medium">@audio.phones</div>
                     <div className="text-sm text-gray-400">@iphones.audio</div>
@@ -510,27 +510,27 @@ export default function AudioPhonesStore() {
               <h4 className="font-bold text-white mb-6">Productos</h4>
               <ul className="space-y-3 text-gray-300">
                 <li>
-                  <Link href="/iphones" className="hover:text-orange-500 transition-colors">
+                  <Link href="/iphones" className="hover:text-red-500 transition-colors">
                     iPhones
                   </Link>
                 </li>
                 <li>
-                  <Link href="/samsung" className="hover:text-orange-500 transition-colors">
+                  <Link href="/samsung" className="hover:text-red-500 transition-colors">
                     Samsung
                   </Link>
                 </li>
                 <li>
-                  <Link href="/xiaomi" className="hover:text-orange-500 transition-colors">
+                  <Link href="/xiaomi" className="hover:text-red-500 transition-colors">
                     Xiaomi
                   </Link>
                 </li>
                 <li>
-                  <Link href="/motorola" className="hover:text-orange-500 transition-colors">
+                  <Link href="/motorola" className="hover:text-red-500 transition-colors">
                     Motorola
                   </Link>
                 </li>
                 <li>
-                  <Link href="/macbooks" className="hover:text-orange-500 transition-colors">
+                  <Link href="/macbooks" className="hover:text-red-500 transition-colors">
                     MacBooks
                   </Link>
                 </li>
@@ -541,22 +541,22 @@ export default function AudioPhonesStore() {
               <h4 className="font-bold text-white mb-6">Soporte</h4>
               <ul className="space-y-3 text-gray-300">
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link href="#" className="hover:text-red-500 transition-colors">
                     Centro de Ayuda
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link href="#" className="hover:text-red-500 transition-colors">
                     Garantías
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link href="#" className="hover:text-red-500 transition-colors">
                     Devoluciones
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link href="#" className="hover:text-red-500 transition-colors">
                     Contacto
                   </Link>
                 </li>
@@ -567,22 +567,22 @@ export default function AudioPhonesStore() {
               <h4 className="font-bold text-white mb-6">Empresa</h4>
               <ul className="space-y-3 text-gray-300">
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link href="#" className="hover:text-red-500 transition-colors">
                     Sobre Nosotros
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link href="#" className="hover:text-red-500 transition-colors">
                     Términos
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link href="#" className="hover:text-red-500 transition-colors">
                     Privacidad
                   </Link>
                 </li>
                 <li>
-                  <Link href="/admin/login" className="hover:text-orange-500 transition-colors">
+                  <Link href="/admin/login" className="hover:text-red-500 transition-colors">
                     Admin
                   </Link>
                 </li>
@@ -600,4 +600,3 @@ export default function AudioPhonesStore() {
     </div>
   )
 }
-// This code is a React component for the AudioPhones store homepage.
